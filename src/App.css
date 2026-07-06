@@ -1,0 +1,151 @@
+button {
+  font-size: 18px;
+  background-color: #008542;
+  color: #fff;
+  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: unset;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: 900;
+  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+button:before {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #008542 !important;
+  box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+    0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+    4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+button:after {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+button:hover:before {
+  box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+button:hover:after {
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+button:active {
+  transform: translateY(4px);
+}
+
+button:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+.board-row{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; 
+  height : 100px;
+  width : 25rem;
+}
+.square{
+  border: groove 1px;
+  font-size : 60px;
+  border-style: groove;
+  height : 100px;
+  width : 100%;
+  display : flex;
+  justify-content: center;
+  align-items:  center;
+}
+.board-container{
+  margin : 20px;
+  display : grid;
+  justify-items: center;
+}
+.heading{
+  color : white;
+  font-size : 6vh;
+  background-image: linear-gradient(to bottom right, #0100EC, #FB36F4);
+  border-radius : 20px;
+  padding : 20px;
+}
+
+
+
+body {
+  font-family: monospace;
+  color : white;
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+
+
+  background-image: 
+    
+    radial-gradient(circle at center, transparent 30%, #000 90%),
+    
+    linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+
+    linear-gradient(rgba(217, 3, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 3, 244, 0.05) 1px, transparent 1px);
+
+  
+  background-size:
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    20px 20px,
+    20px 20px;
+
+ 
+  animation: cyber-move 10s linear infinite;
+}
+
+
+@keyframes cyber-move {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      0 0,
+      60px 60px,
+      60px 60px,
+      40px 40px,
+      40px 40px; 
+  }
+}
